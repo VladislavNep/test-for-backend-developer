@@ -1,0 +1,12 @@
+version: '3.5'
+services:
+  mongo:
+    image: mongo
+    container_name: mongodb_email
+    restart: unless-stopped
+    environment:
+      MONGO_INITDB_DATABASE: dialog
+    ports:
+      - 127.0.0.1:27017:27017
+    volumes:
+      - ./data:/data/db
